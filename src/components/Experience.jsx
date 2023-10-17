@@ -15,22 +15,20 @@ export default function Experience() {
             <OrbitControls />
             <Environment preset='sunset' />
             <Sky />
-            <group position-y={-1}>
-                <Ando position={new Vector3(position.x, position.y, position.z)} />
-                <mesh
-                    scale={10}
-                    rotation-x={-Math.PI * 0.5}
-                    onClick={(e) => {
-                        setPosition({
-                            x: e.point.x,
-                            z: e.point.z
-                        });
-                    }}
-                >
-                    <planeGeometry />
-                    <meshStandardMaterial color="white" />
-                </mesh>
-            </group>
+            <Ando position={new Vector3(position.x, position.y, position.z)} />
+            <mesh
+                rotation-x={-Math.PI / 2}
+                scale={10}
+                onClick={(e) => {
+                    setPosition({
+                        x: e.point.x,
+                        z: e.point.z
+                    });
+                }}
+            >
+                <planeGeometry />
+                <meshStandardMaterial color="white" />
+            </mesh>
         </>
     );
 }

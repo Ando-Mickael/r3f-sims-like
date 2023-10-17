@@ -40,7 +40,7 @@ export function Ando(props) {
 
     return (
         <group {...props} position={position} ref={group} dispose={null}>
-            <group rotation={[-Math.PI / 2, 0, 0]}>
+            <group rotation-x={-Math.PI / 2}>
                 <primitive object={nodes.Hips} />
                 <skinnedMesh
                     name="EyeLeft"
@@ -101,7 +101,6 @@ export function Ando(props) {
                 />
             </group>
         </group>
-
     );
 }
 
