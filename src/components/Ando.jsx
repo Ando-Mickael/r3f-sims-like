@@ -8,7 +8,7 @@ export function Ando(props) {
 
     const group = useRef();
     const { nodes, materials } = useGLTF("models/ando.glb");
-    const { animations: idleAnimation } = useFBX("animations/neutral_idle.fbx");
+    const { animations: idleAnimation } = useFBX("animations/Neutral Idle.fbx");
     const { animations: walkingAnimation } = useFBX("animations/Walking.fbx");
 
     idleAnimation[0].name = "Idle";
