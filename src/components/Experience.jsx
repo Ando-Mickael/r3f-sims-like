@@ -1,4 +1,4 @@
-import { Environment, OrbitControls, Sky } from '@react-three/drei';
+import { Environment, Sky } from '@react-three/drei';
 import { Ando } from './Ando';
 import { useState } from 'react';
 import { Vector3 } from 'three';
@@ -12,7 +12,6 @@ export default function Experience() {
 
     return (
         <>
-            <OrbitControls />
             <Environment preset='sunset' />
             <Sky />
             <Ando position={new Vector3(position.x, position.y, position.z)} />

@@ -19,11 +19,10 @@ export function Ando(props) {
     const [animation, setAnimation] = useState("Idle");
 
     useEffect(() => {
-        console.log(props.position);
         actions[animation].reset().play();
     }, [animation]);
 
-    useFrame(() => {
+    useFrame((state) => {
         if (group.current.position.distanceTo(props.position) > 0.1) {
             const direction = group.current.position
                 .clone()
@@ -36,6 +35,11 @@ export function Ando(props) {
         } else {
             setAnimation("Idle");
         }
+
+        state.camera.position.x = group.current.position.x + 8;
+        state.camera.position.y = group.current.position.y + 8;
+        state.camera.position.z = group.current.position.z + 8;
+        state.camera.lookAt(group.current.position);
     });
 
     return (
